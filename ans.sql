@@ -1,4 +1,4 @@
-Find actor with the most films
+-- Find actor with the most films
   SELECT
     actor_id, COUNT(film_id)
   FROM
@@ -14,24 +14,24 @@ Find actor with the most films
     -- Since we now know the actor id which appeared most in the film list, we use it in the next query
     -- to find the first and last name of the actor
     
-Answer to question 1 is actor_id 107, Gina Degeneres.
+-- Answer to question 1 is actor_id 107, Gina Degeneres.
 
 
 
 
-Average running time of all the films in the database
+-- Average running time of all the films in the database
   SELECT
     AVG(`length`)
   FROM
     `film`;
 -- This selects the average of length from the films
 
-Answer to question 2 is 115.2720 (115.27 mins)
+-- Answer to question 2 is 115.2720 (115.27 mins)
 
 
 
 
-Average run time of films by category
+-- Average run time of films by category
   -- TRIAL AND ERROR CODE
   
   DESCRIBE `sakila`.`film_list`;
@@ -50,27 +50,27 @@ Average run time of films by category
   -- Second line specifies it is from film list within sakila
   -- Third line groups output by category and orders them, from category, by ascending
   
- Answer to question 3
- Action - 111
- Animation - 111
- Children - 109
- Classics - 111
- Comedy - 115
- Documentary - 108
- Drama - 119
- Family - 114
- Foreign - 121
- Games - 127
- Horror - 112
- Music - 113
- New - 111
- Sci-Fi - 108
- Sports - 127
- Travel - 113
+-- Answer to question 3
+-- Action - 111
+-- Animation - 111
+-- Children - 109
+-- Classics - 111
+-- Comedy - 115
+-- Documentary - 108
+-- Drama - 119
+-- Family - 114
+-- Foreign - 121
+-- Games - 127
+-- Horror - 112
+-- Music - 113
+-- New - 111
+-- Sci-Fi - 108
+-- Sports - 127
+-- Travel - 113
 
 
 
-How many movies with ROBOTS in them
+-- How many movies with ROBOTS in them
   SELECT
     COUNT(*)
   FROM
@@ -79,12 +79,12 @@ How many movies with ROBOTS in them
     `description` LIKE '%robot%';
 -- This returns the sum of films which have a description including the word "robot"
 
-Answer to question 4 is 77
+-- Answer to question 4 is 77
 
 
 
 
-Movies with the longest runtime
+-- Movies with the longest runtime
   SELECT
     film_id, (`length`)
   FROM
@@ -93,13 +93,13 @@ Movies with the longest runtime
     `length`;
 -- This returns a list of films sorted by length
 
-Answer to question 5 is film 15, 469, 504, 505, 730
-need to work out how to output names of films from this
+-- Answer to question 5 is film 15, 469, 504, 505, 730
+-- need to work out how to output names of films from this
 
 
 
 
-Count how many movies were released in the year 2010
+-- Count how many movies were released in the year 2010
 SELECT
   COUNT(*)
 FROM
@@ -110,7 +110,7 @@ WHERE
 
 
 
-Which last names are not repeated
+-- Which last names are not repeated
 -- Trial and error code
 DESCRIBE `sakila`.`actor`;
 SELECT `last_name`, COUNT(`last_name`)
@@ -132,5 +132,4 @@ HAVING
   COUNT(`last_name`) = 1;
 
 
-Answer to question 7
-List of categories and their average length
+-- Answer to question 7
