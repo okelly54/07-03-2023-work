@@ -1,0 +1,41 @@
+Find actor with the most films
+  SELECT
+    actor_id, COUNT(film_id)
+  FROM
+    `film_actor`
+  GROUP BY
+    ORDER BY COUNT(film_id) DESC LIMIT 1;
+    -- This produced a list of actor_id which was counted from film_actor.
+    -- We grouped them by actor id to list the ids and then ordered them by count, how many times the actor id
+    -- appeared in that list, and output them in that order. DESC LIMIT 1 specified that we see only 1,
+    -- the one with the highest count
+    SELECT * FROM `actor` WHERE actor_id = 107;
+    SELECT `first_name`, `last_name` FROM actor WHERE actor_id;
+    -- Since we now know the actor id which appeared most in the film list, we use it in the next query
+    -- to find the first and last name of the actor
+    
+Answer to question 1 is actor_id 107, Gina Degeneres.
+
+Average running time of all the films in the database
+  SELECT
+    AVG(`length`)
+  FROM
+    `film`;
+-- This selects the average of length from the films
+
+Answer to question 2 is 115.2720 (115.27 mins)
+
+Average run time of films by category
+UNFINISHED
+
+How many movies with ROBOTS in them
+  SELECT
+    COUNT(*)
+  FROM
+    `film`
+  WHERE
+    `description` LIKE '%robot%';
+-- This returns the sum of films which have a description including the word "robot"
+
+Answer to question 4 is 77
+
